@@ -5,8 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="modal.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="modal.js"></script>   
+ <script>
+
+// $(function(){
+//     var modal = $('#modal'),
+//         modalContent = $('#modal_content'),
+//         btnOpen = $("#btn_open"),
+//         btnClose = $(".btn_close");
+ 
+//     $(btnOpen).on('click', function() {
+//         modal.show();
+//     });
+ 
+//     $(modal).on('click', function(event) {
+//         if(!($(event.target).closest(modalContent).length)||($(event.target).closest(btnClose).length)){
+//             modal.hide();
+//         }
+//     });
+// });
+
+        $(window).on('scroll', function () {
+    var modal = $('#modal'),
+        modalContent = $('#modal_content'),
+        btnOpen = $("#btn_open"),
+        btnClose = $(".btn_close"),
+        imgTag = '<img  src="./warning.jpg"  alt="画像の解説文">';
+
+
+        
+            var doch = $(document).innerHeight(); //ページ全体の高さ
+            var winh = $(window).innerHeight(); //ウィンドウの高さ
+            var bottom = doch - winh; //ページ全体の高さ - ウィンドウの高さ = ページの最下部位置
+            if (bottom <= $(window).scrollTop()) {
+            //一番下までスクロールした時に実行
+            alert("最底辺！")
+            var modals = document.getElementById('modals');
+            var div = document.createElement('div');
+            div.textContent = 'hoge';
+
+            for (var index = 0; index < 20; index++) {
+                var element = document.createElement('div');
+element.innerHTML = '<img class="img'+index+'" src="./warning.jpg"  alt="画像の解説文">';
+        document.body.insertBefore(element, modals);
+            }
+
+            
+            }
+        });
+</script>
 </head>
 <body>
+
+<button id="btn_open">表示</button>
+ 
+<div id="modal">
+    <div id="modal_content">
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <button class="btn_close">閉じる</button>
+    </div>
+</div>
 下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    
 下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    
 下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    
@@ -218,6 +283,6 @@
 下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    
 下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    
 下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    
-下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    下にスクロールして    
+<div id="modals"></div>
 </body>
 </html>
