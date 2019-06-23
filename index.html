@@ -50,10 +50,19 @@
             var div = document.createElement('div');
             div.textContent = 'hoge';
 
-            for (var index = 0; index < 20; index++) {
-                var element = document.createElement('div');
+            for (var index = 0; index < 10; index++) {
+                                    var element = document.createElement('div');
 element.innerHTML = '<img class="img'+index+'" src="./warning.jpg"  alt="画像の解説文">';
-        document.body.insertBefore(element, modals);
+
+    document.body.insertBefore(element, modals);
+// setTimeout(function() {
+//     var re =index 
+//                     var element = document.createElement('div');
+// element.innerHTML = '<img class="img'+re+'" src="./warning.jpg"  alt="画像の解説文">';
+
+//     document.body.insertBefore(element, modals);
+// }, (Math.random*1000/index));
+        
             }
 
             
